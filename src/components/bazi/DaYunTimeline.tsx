@@ -354,7 +354,7 @@ export default function DaYunTimeline({ data, selectedIndex, onSelect, analysis 
             <div className="p-5 space-y-5">
               {/* 十年总述 */}
               <section>
-                <SectionTitle text="十年总述" />
+                <SectionTitle>十年总述</SectionTitle>
                 <p
                   className="text-base mt-2 leading-relaxed"
                   style={{ color: '#333' }}
@@ -372,9 +372,9 @@ export default function DaYunTimeline({ data, selectedIndex, onSelect, analysis 
               {/* 分隔线 */}
               <hr style={{ borderColor: 'var(--color-border-warm)' }} />
 
-              {/* 四维度判断 */}
+              {/* 核心影响 */}
               <section>
-                <SectionTitle text="核心影响" />
+                <SectionTitle>核心影响</SectionTitle>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
                   {analysis.dimVerdicts.map((v) => {
                     const vc = VERDICT_COLORS[v.type];
@@ -402,7 +402,7 @@ export default function DaYunTimeline({ data, selectedIndex, onSelect, analysis 
 
               {/* 特殊年份提示 */}
               <section>
-                <SectionTitle text="特殊年份提示" />
+                <SectionTitle>特殊年份提示</SectionTitle>
                 <div className="mt-3 space-y-2">
                   {analysis.specialYears.map((sy, i) => {
                     const sc = SPECIAL_COLORS[sy.type];
@@ -477,7 +477,7 @@ export default function DaYunTimeline({ data, selectedIndex, onSelect, analysis 
 
 // ---- 子组件 ----
 
-function SectionTitle({ text }: { text: string }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
       <span className="w-1 h-4 rounded-full" style={{ backgroundColor: 'var(--color-cinnabar)' }} />
@@ -485,7 +485,7 @@ function SectionTitle({ text }: { text: string }) {
         className="text-base font-bold"
         style={{ fontFamily: 'var(--font-family-kai)', color: 'var(--color-primary-dark)' }}
       >
-        {text}
+        {children}
       </span>
     </div>
   );

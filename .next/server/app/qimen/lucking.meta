@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/qimen/layout,_N_T_/qimen/lucking/layout,_N_T_/qimen/lucking/page,_N_T_/qimen/lucking"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/qimen/lucking/__PAGE__",
+    "/qimen/lucking",
+    "/qimen",
+    "/_index",
+    "/_head"
+  ]
+}

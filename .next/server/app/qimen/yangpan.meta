@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/qimen/layout,_N_T_/qimen/yangpan/layout,_N_T_/qimen/yangpan/page,_N_T_/qimen/yangpan"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/qimen/yangpan/__PAGE__",
+    "/qimen/yangpan",
+    "/qimen",
+    "/_index",
+    "/_head"
+  ]
+}

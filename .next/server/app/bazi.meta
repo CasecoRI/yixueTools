@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/bazi/layout,_N_T_/bazi/page,_N_T_/bazi"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/bazi/__PAGE__",
+    "/bazi",
+    "/_index",
+    "/_head"
+  ]
+}

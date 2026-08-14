@@ -93,7 +93,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
       <div className="p-5 space-y-5">
         {/* === 基础信息 === */}
         <section>
-          <SectionTitle text="基础信息" />
+          <SectionTitle>基础信息</SectionTitle>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
             <InfoCell label="流年干支" value={analysis.ganZhi} highlight>
               <span className="flex gap-1 mt-0.5">
@@ -109,7 +109,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
 
         {/* === 原局联动 === */}
         <section>
-          <SectionTitle text="原局联动" />
+          <SectionTitle>原局联动</SectionTitle>
           {/* text-sm→text-base(16px) */}
           <p className="text-base mt-2 leading-relaxed" style={{ color: 'var(--color-ink-light)' }}>
             {analysis.yuanJuSummary}
@@ -153,7 +153,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
 
         {/* === 大运联动 === */}
         <section>
-          <SectionTitle text="大运联动" />
+          <SectionTitle>大运联动</SectionTitle>
           <div className="mt-3 space-y-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {/* text-xs→text-sm(14px) */}
@@ -177,7 +177,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
 
         {/* === 核心断语 === */}
         <section>
-          <SectionTitle text="核心断语" />
+          <SectionTitle>核心断语</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
             {analysis.verdicts.map((v) => {
               const vc = VERDICT_COLORS[v.type];
@@ -205,7 +205,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
         {/* === 关键提示 === */}
         {analysis.tips.length > 0 && (
           <section>
-            <SectionTitle text="关键提示" />
+            <SectionTitle>关键提示</SectionTitle>
             <div className="mt-3 space-y-1.5">
               {analysis.tips.map((tip, i) => {
                 const tc = TIP_COLORS[tip.type];
@@ -235,7 +235,7 @@ export default function LiuNianDetailPanel({ analysis, onClose }: LiuNianDetailP
 
 // ---- 子组件 ----
 
-function SectionTitle({ text }: { text: string }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
       <span className="w-1 h-4 rounded-full" style={{ backgroundColor: 'var(--color-cinnabar)' }} />
@@ -244,7 +244,7 @@ function SectionTitle({ text }: { text: string }) {
         className="text-base font-bold"
         style={{ fontFamily: 'var(--font-family-kai)', color: 'var(--color-primary-dark)' }}
       >
-        {text}
+        {children}
       </span>
     </div>
   );

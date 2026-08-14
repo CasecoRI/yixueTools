@@ -1,0 +1,212 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/.well-known/ai-plugin.json",
+      "regex": "^/\\.well\\-known/ai\\-plugin\\.json(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/\\.well\\-known/ai\\-plugin\\.json(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/api/v1/bazi",
+      "regex": "^/api/v1/bazi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/bazi(?:/)?$"
+    },
+    {
+      "page": "/api/v1/calendar",
+      "regex": "^/api/v1/calendar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/calendar(?:/)?$"
+    },
+    {
+      "page": "/api/v1/health",
+      "regex": "^/api/v1/health(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/health(?:/)?$"
+    },
+    {
+      "page": "/api/v1/liuyao",
+      "regex": "^/api/v1/liuyao(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/liuyao(?:/)?$"
+    },
+    {
+      "page": "/api/v1/meihua",
+      "regex": "^/api/v1/meihua(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/meihua(?:/)?$"
+    },
+    {
+      "page": "/api/v1/naming",
+      "regex": "^/api/v1/naming(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/naming(?:/)?$"
+    },
+    {
+      "page": "/api/v1/openapi.json",
+      "regex": "^/api/v1/openapi\\.json(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/openapi\\.json(?:/)?$"
+    },
+    {
+      "page": "/api/v1/qimen",
+      "regex": "^/api/v1/qimen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/qimen(?:/)?$"
+    },
+    {
+      "page": "/api/v1/taiyi",
+      "regex": "^/api/v1/taiyi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/v1/taiyi(?:/)?$"
+    },
+    {
+      "page": "/bazi",
+      "regex": "^/bazi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/bazi(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/calendar",
+      "regex": "^/calendar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/calendar(?:/)?$"
+    },
+    {
+      "page": "/docs",
+      "regex": "^/docs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs(?:/)?$"
+    },
+    {
+      "page": "/liuyao",
+      "regex": "^/liuyao(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/liuyao(?:/)?$"
+    },
+    {
+      "page": "/meihua",
+      "regex": "^/meihua(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/meihua(?:/)?$"
+    },
+    {
+      "page": "/naming",
+      "regex": "^/naming(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/naming(?:/)?$"
+    },
+    {
+      "page": "/notes",
+      "regex": "^/notes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/notes(?:/)?$"
+    },
+    {
+      "page": "/qimen",
+      "regex": "^/qimen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/qimen(?:/)?$"
+    },
+    {
+      "page": "/qimen/lucking",
+      "regex": "^/qimen/lucking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/qimen/lucking(?:/)?$"
+    },
+    {
+      "page": "/qimen/yangpan",
+      "regex": "^/qimen/yangpan(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/qimen/yangpan(?:/)?$"
+    },
+    {
+      "page": "/resources",
+      "regex": "^/resources(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/resources(?:/)?$"
+    },
+    {
+      "page": "/taiyi",
+      "regex": "^/taiyi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/taiyi(?:/)?$"
+    },
+    {
+      "page": "/zhaoji",
+      "regex": "^/zhaoji(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zhaoji(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

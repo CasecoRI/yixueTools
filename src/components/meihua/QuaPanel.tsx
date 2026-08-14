@@ -9,7 +9,7 @@ interface QuaPanelProps {
   result: DivinationResult;
 }
 
-function SectionTitle({ text }: { text: string }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
       <span className="w-1 h-4 rounded-full" style={{ backgroundColor: 'var(--color-cinnabar)' }} />
@@ -17,7 +17,7 @@ function SectionTitle({ text }: { text: string }) {
         className="text-base font-bold"
         style={{ fontFamily: 'var(--font-family-kai)', color: 'var(--color-primary-dark)' }}
       >
-        {text}
+        {children}
       </span>
     </div>
   );
@@ -48,7 +48,7 @@ export default function QuaPanel({ result }: QuaPanelProps) {
     <div className="card-chinese p-5 md:p-6 space-y-5">
       {/* 基础信息 */}
       <div>
-        <SectionTitle text="起卦信息" />
+        <SectionTitle>起卦信息</SectionTitle>
         <div className="flex flex-wrap gap-2 mt-2">
           <InfoTag label="起卦方式" value={METHOD_NAMES[result.method] || result.method} />
           <InfoTag label="起卦时间" value={result.timestamp} />
@@ -66,7 +66,7 @@ export default function QuaPanel({ result }: QuaPanelProps) {
 
       {/* 本卦 → 变卦 */}
       <div>
-        <SectionTitle text="卦象" />
+        <SectionTitle>卦象</SectionTitle>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mt-4">
           {/* 本卦 */}
           <HexagramCard
@@ -107,7 +107,7 @@ export default function QuaPanel({ result }: QuaPanelProps) {
       {/* 卦辞 + 爻辞 */}
       <div>
         <div className="flex items-center justify-between">
-          <SectionTitle text="卦辞与爻辞" />
+          <SectionTitle>卦辞与爻辞</SectionTitle>
           <button
             onClick={() => setShowYaoCi(!showYaoCi)}
             className="text-sm px-3 py-1 rounded-lg transition-colors"
@@ -166,7 +166,7 @@ export default function QuaPanel({ result }: QuaPanelProps) {
 
       {/* 关联卦 */}
       <div>
-        <SectionTitle text="关联卦" />
+        <SectionTitle>关联卦</SectionTitle>
         <div className="grid grid-cols-3 gap-3 mt-3">
           <SmallGuaCard hexagram={result.mutual} label="互卦" />
           <SmallGuaCard hexagram={result.reversed} label="错卦" />
@@ -179,7 +179,7 @@ export default function QuaPanel({ result }: QuaPanelProps) {
         <>
           <hr style={{ borderColor: 'var(--color-border-warm)' }} />
           <div>
-            <SectionTitle text="笔画详情" />
+            <SectionTitle>笔画详情</SectionTitle>
             <div className="flex flex-wrap gap-1.5 mt-2">
               {result.strokeDetails.map((d, i) => (
                 <span

@@ -8,7 +8,7 @@ interface QuaAnalysisProps {
   analysis: MeihuaAnalysis;
 }
 
-function SectionTitle({ text }: { text: string }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
       <span className="w-1 h-4 rounded-full" style={{ backgroundColor: 'var(--color-cinnabar)' }} />
@@ -16,7 +16,7 @@ function SectionTitle({ text }: { text: string }) {
         className="text-base font-bold"
         style={{ fontFamily: 'var(--font-family-kai)', color: 'var(--color-primary-dark)' }}
       >
-        {text}
+        {children}
       </span>
     </div>
   );
@@ -70,7 +70,7 @@ export default function QuaAnalysis({ result, analysis }: QuaAnalysisProps) {
     <div className="card-chinese p-5 md:p-6 space-y-5">
       {/* 体用关系 */}
       <section>
-        <SectionTitle text="体用关系" />
+        <SectionTitle>体用关系</SectionTitle>
         <div className="mt-3 flex flex-col sm:flex-row items-center gap-4">
           {/* 体卦 */}
           <div
@@ -129,7 +129,7 @@ export default function QuaAnalysis({ result, analysis }: QuaAnalysisProps) {
 
       {/* 动爻解读（增强：支持多段落显示） */}
       <section>
-        <SectionTitle text="动爻解读" />
+        <SectionTitle>动爻解读</SectionTitle>
         <div className="text-base mt-2 leading-relaxed whitespace-pre-line" style={{ color: '#333' }}>
           {movingLineInterpretation}
         </div>
@@ -139,7 +139,7 @@ export default function QuaAnalysis({ result, analysis }: QuaAnalysisProps) {
 
       {/* 五行生克详解 */}
       <section>
-        <SectionTitle text="五行生克" />
+        <SectionTitle>五行生克</SectionTitle>
         <p className="text-sm mt-2 leading-relaxed" style={{ color: '#666' }}>
           {elementInteractions}
         </p>
@@ -149,7 +149,7 @@ export default function QuaAnalysis({ result, analysis }: QuaAnalysisProps) {
 
       {/* 问事结论：核心4维度（原有布局不变） */}
       <section>
-        <SectionTitle text="问事分析" />
+        <SectionTitle>问事分析</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
           {coreVerdicts.map((v) => (
             <VerdictCard key={v.category} v={v} />
@@ -188,7 +188,7 @@ export default function QuaAnalysis({ result, analysis }: QuaAnalysisProps) {
 
       {/* 关键提示 */}
       <section>
-        <SectionTitle text="关键提示" />
+        <SectionTitle>关键提示</SectionTitle>
         <div className="mt-3 space-y-2">
           {keyTips.map((tip, i) => (
             <div
