@@ -44,3 +44,4 @@ Thumbs.db
 # TypeScript 缓存
 *.tsbuildinfo
 nul
+.vercel
