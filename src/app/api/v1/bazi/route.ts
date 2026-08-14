@@ -1,5 +1,5 @@
 import { ok, fail, parseBody, requireFields } from '../_shared';
-import { getBaziResult, buildDaYunResult, analyzeFourDimensions } from '@/lib/lunar';
+import { getBaziResult, buildDaYunResult, analyzeFourDimensions, computeDynamicWuxing, buildLiuNianList } from '@/lib/lunar';
 import { getBaziInterpretation } from '@/lib/bazi-interpretation';
 
 /**
@@ -26,11 +26,24 @@ export async function POST(req: Request) {
     const fourDim = analyzeFourDimensions(baziResult, gender);
     const interpretation = getBaziInterpretation(baziResult, daYunResult, gender);
 
+    // 计算动态五行（用于前端的五行力量图）
+    const currentYear = new Date().getFullYear();
+    const currentIdx = daYunResult?.daYunList?.findIndex((dy) => currentYear >= dy.startYear && currentYear <= dy.endYear) ?? -1;
+    const selectedDaYun = currentIdx >= 0 ? daYunResult.daYunList[currentIdx] : (daYunResult.daYunList[0] ?? null);
+    let currentLiuNian = null;
+    if (selectedDaYun) {
+      const liuNianList = buildLiuNianList(selectedDaYun, baziResult);
+      currentLiuNian = liuNianList.find((ln) => ln.year === currentYear) ?? null;
+    }
+
+    const dynamicWuxing = computeDynamicWuxing(baziResult, selectedDaYun, currentLiuNian);
+
     return ok({
       bazi: baziResult,
       daYun: daYunResult,
       fourDimensions: fourDim,
       interpretation,
+      dynamicWuxing,
     });
   } catch (e) {
     return fail(e instanceof Error ? e.message : '排盘失败', 500);
