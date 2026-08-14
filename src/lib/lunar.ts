@@ -211,11 +211,11 @@ export function getCalendarInfo(
   day: number,
   hour: number = 0,
 ): CalendarResult {
-  const solar = Solar.fromYmd(year, month, day);
+  const solar = Solar.fromYmdHms(year, month, day, hour, 0, 0);
   const lunar = solar.getLunar();
 
-  // 时辰对应的地支索引
-  const timeZhiIndex = Math.floor((hour + 1) % 24 / 2);
+  // 时辰对应的地支索引（保留用于其他计算）
+  const timeZhiIndex = Math.floor(((hour + 1) % 24) / 2);
   const timeGanZhi = lunar.getTimeInGanZhi();
 
   // 获取节气
