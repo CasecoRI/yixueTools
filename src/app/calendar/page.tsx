@@ -21,12 +21,19 @@ const HOURS = Array.from({ length: 12 }, (_, i) => {
   return { value: h, label: getShiChen(h) };
 });
 
+// 将 0-23 小时映射为代表该时辰的小时（用于 select 值匹配和展示）
+function toRepresentativeHour(hour: number) {
+  const idx = Math.floor(((hour + 1) % 24) / 2);
+  return idx === 0 ? 23 : idx * 2 - 1;
+}
+
 export default function CalendarPage() {
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth() + 1);
   const [day, setDay] = useState(now.getDate());
-  const [hour, setHour] = useState(now.getHours());
+  // const [hour, setHour] = useState(now.getHours());
+  const [hour, setHour] = useState(toRepresentativeHour(now.getHours()));
 
   // 日期输入
   const [inputYear, setInputYear] = useState(String(year));
@@ -69,7 +76,8 @@ export default function CalendarPage() {
     setYear(now.getFullYear());
     setMonth(now.getMonth() + 1);
     setDay(now.getDate());
-    setHour(now.getHours());
+    // setHour(now.getHours());
+    setHour(toRepresentativeHour(now.getHours()));
     setInputYear(String(now.getFullYear()));
     setInputMonth(String(now.getMonth() + 1));
     setInputDay(String(now.getDate()));
